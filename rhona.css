@@ -307,6 +307,134 @@ body.dark-mode nav.scrolled {
     left: 50%;
 }
 
+.shape:nth-child(4) {
+    width: 250px;
+    height: 250px;
+    background: var(--red);
+    top: 70%;
+    left: 50%;
+    animation-delay: 2s;
+    transform: rotate(-45deg);
+}
+
+.shape:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    border-radius: 50%;
+    top: -50%;
+    left: 0;
+}
+
+.shape:nth-child(4)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+}
+
+.shape:nth-child(5) {
+    width: 180px;
+    height: 180px;
+    background: var(--red);
+    top: 30%;
+    right: 5%;
+    animation-delay: 4s;
+    transform: rotate(-45deg);
+}
+
+.shape:nth-child(5)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    border-radius: 50%;
+    top: -50%;
+    left: 0;
+}
+
+.shape:nth-child(5)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+}
+
+.shape:nth-child(6) {
+    width: 120px;
+    height: 120px;
+    background: var(--red);
+    bottom: 10%;
+    right: 30%;
+    animation-delay: 7s;
+    transform: rotate(-45deg);
+}
+
+.shape:nth-child(6)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    border-radius: 50%;
+    top: -50%;
+    left: 0;
+}
+
+.shape:nth-child(6)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+}
+
+.shape:nth-child(7) {
+    width: 200px;
+    height: 200px;
+    background: var(--red);
+    top: 40%;
+    left: 5%;
+    animation-delay: 5s;
+    transform: rotate(-45deg);
+}
+
+.shape:nth-child(7)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    border-radius: 50%;
+    top: -50%;
+    left: 0;
+}
+
+.shape:nth-child(7)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+}
+
 @keyframes float {
 
     0%,
@@ -1148,16 +1276,24 @@ body.dark-mode .footer-links a {
 
     .hero-content {
         text-align: center;
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-top: 5rem;
+        padding: 15px;
     }
 
     .hero-image-wrapper {
-        width: 280px;
-        height: 280px;
+        width: 250px;
+        height: 250px;
     }
 
     .hero-cta {
         flex-direction: column;
         align-items: center;
+        gap: 0.8rem;
     }
 
     .hero-cta .btn {
@@ -1166,7 +1302,19 @@ body.dark-mode .footer-links a {
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin: 0 auto 1.5rem;
+        max-width: 100%;
     }
 
     .about-content,
@@ -1204,6 +1352,72 @@ body.dark-mode .footer-links a {
 
     .about-stats {
         grid-template-columns: 1fr;
+    }
+
+    /* Footer mobile improvements */
+    footer {
+        padding: 2rem 5%;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Contact form improvements */
+    .contact-form {
+        padding: 0;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+/* Additional mobile styles for very small screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-links {
+        gap: 0.8rem;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    .shape {
+        opacity: 0.05 !important;
+    }
+
+    .hero-image {
+        margin-top: 4rem;
     }
 }
 
