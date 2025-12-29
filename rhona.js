@@ -74,12 +74,53 @@ window.addEventListener('scroll', () => {
 
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    // Show navbar when opening menu on mobile
+    if (window.innerWidth <= 768) {
+        navbar.classList.remove('nav-hidden');
+    }
+});
+
+// Make logo show navbar on mobile
+const logo = document.querySelector('.logo');
+logo.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+        // Toggle navbar visibility
+        navbar.classList.toggle('nav-hidden');
+        // Close mobile menu if open
+        navLinks.classList.remove('active');
+    }
 });
 
 navLinkElements.forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
     });
+});
+
+// Smart navbar auto-hide on scroll for mobile
+let lastScrollTop = 0;
+let scrollThreshold = 50; // Minimum scroll distance before hiding
+
+window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768) {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // At the top of page, always show navbar
+        if (scrollTop < 100) {
+            navbar.classList.remove('nav-hidden');
+        }
+        // Scrolling down - hide navbar
+        else if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            navbar.classList.add('nav-hidden');
+            navLinks.classList.remove('active'); // Close menu when hiding
+        }
+        // Scrolling up - show navbar
+        else if (scrollTop < lastScrollTop) {
+            navbar.classList.remove('nav-hidden');
+        }
+
+        lastScrollTop = scrollTop;
+    }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -79,7 +79,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.4s ease;
 }
 
 body.dark-mode nav {
@@ -102,6 +102,7 @@ body.dark-mode nav.scrolled {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--off-black);
+    cursor: pointer;
 }
 
 .nav-links {
@@ -1243,6 +1244,12 @@ body.dark-mode .footer-links a {
 }
 
 @media (max-width: 768px) {
+
+    /* Navbar visible by default on mobile, hides on scroll down */
+    nav.nav-hidden {
+        transform: translateY(-100%);
+    }
+
     .hamburger {
         display: flex;
     }
