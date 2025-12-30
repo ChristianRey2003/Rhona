@@ -244,3 +244,87 @@ contactForm.addEventListener('submit', (e) => {
     alert(`Thank you, ${formData.name}! Your message has been sent successfully. I'll get back to you soon!`);
     contactForm.reset();
 });
+
+// Carousel Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+
+    carousels.forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        if (!track) return;
+
+        const slides = Array.from(track.children);
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+        const dotContainer = carousel.querySelector('.carousel-dots');
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetTimer();
+            });
+            if (dotContainer) dotContainer.appendChild(dot);
+        });
+
+        const dots = carousel.querySelectorAll('.dot');
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        function goToSlide(index) {
+            // Handle wrapping
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+
+            // Update slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+
+            // Update dots
+            if (dots.length > 0) {
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+            }
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        function startTimer() {
+            autoPlayInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
+        }
+
+        function resetTimer() {
+            clearInterval(autoPlayInterval);
+            startTimer();
+        }
+
+        // Event Listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetTimer();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetTimer();
+            });
+        }
+
+        // Start auto-play
+        startTimer();
+    });
+});

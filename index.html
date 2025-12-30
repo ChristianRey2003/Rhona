@@ -87,26 +87,65 @@
     <section id="about">
         <div class="about-content fade-in">
             <div class="about-image">
-                <img src="rhona-home.jpg" alt="Your Photo">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <img src="rhona-aboutme-1.jpg" alt="Rhona Mae - Photo 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="rhona-aboutme-2.jpg" alt="Rhona Mae - Photo 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="rhona-aboutme-3.jpg" alt="Rhona Mae - Photo 3">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots"></div>
+                </div>
             </div>
             <div class="about-text">
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">Get to know me better</p>
-                <p>
-                    Hi! I’m Rhona Mae, but you can call me Rhona desu. I’m currently a 2nd-year IT student at Eastern
-                    Visayas State University – Ormoc Campus, and I’m really into web development and all things tech.
-                </p>
-                <p>
-                    I started getting into technology out of curiosity, and over time it turned into something I
-                    genuinely enjoy and want to grow in. I love learning new tools, experimenting with designs, and
-                    building websites that look good and actually feel nice to use. Clean code and simple, meaningful
-                    design are things I really value.
-                </p>
-                <p>
-                    When I’m not coding, you’ll probably find me going on adventures, hanging out with friends, or
-                    chilling at the beach. I also like checking out new design trends, contributing to open-source
-                    projects, and sharing what I know with other developers.
-                </p>
+                <div class="about-desc-group">
+                    <h3><i class="fas fa-graduation-cap"></i> Educational Background</h3>
+                    <p>
+                        I graduated from <strong>ACLC College of Ormoc</strong> during S.Y. 2021–2022, where I took the
+                        Accountancy, Business, and Management (ABM) strand.
+                        I am currently pursuing my college education at <strong>Eastern Visayas State University – Ormoc
+                            Campus (EVSU-OC)</strong>, which I started in A.Y 2022–2023.
+                        My college journey continues to shape my skills, discipline, and personal growth as I prepare
+                        for future professional opportunities.
+                    </p>
+
+                    <h3><i class="fas fa-laptop-code"></i> Technical Interests</h3>
+                    <ul class="custom-list">
+                        <li><strong>Basic Web Design and Content Creation</strong> – learning how to present information
+                            creatively and clearly through websites and digital platforms</li>
+                        <li><strong>Basic Graphic Design</strong> – creating simple visuals, layouts, and aesthetic
+                            content</li>
+                    </ul>
+
+                    <h3><i class="fas fa-heart"></i> Hobbies & Personal Interests</h3>
+                    <p>
+                        Outside academics, I enjoy activities that allow me to express creativity and stay active.
+                        My hobbies include <strong>biking and cycling</strong>, which help me relax and maintain a
+                        healthy lifestyle.
+                        I also enjoy <strong>doing makeup</strong> and have a sideline in making others feel confident
+                        and beautiful, which reflects my creativity and attention to detail.
+                        In addition, I love <strong>dancing</strong>, as it allows me to express myself and stay
+                        energetic, and of course, I enjoy <strong>trying different kinds of food</strong>, which adds
+                        fun and balance to my daily life.
+                    </p>
+
+                    <h3><i class="fas fa-lightbulb"></i> Additional Information</h3>
+                    <p>
+                        I consider myself a motivated, creative, and adaptable individual who is always willing to learn
+                        new skills and improve existing ones.
+                        I value teamwork, self-growth, and creativity, and I am eager to gain experiences that will help
+                        me grow both personally and professionally.
+                    </p>
+                </div>
                 <div class="about-stats">
                     <div class="stat-box">
                         <div class="stat-number">2+</div>
@@ -154,36 +193,49 @@
             </div>
 
             <div class="projects-grid" id="projectsGrid">
-                <div class="project-card" data-category="web">
+                <div class="project-card" data-category="other">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
-                            alt="E-Commerce Website">
-                        <div class="project-overlay">
-                            <a href="#" target="_blank" title="View Live Demo"><i
-                                    class="fas fa-external-link-alt"></i></a>
-                            <a href="#" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        <div class="carousel-container project-image-carousel">
+                            <div class="carousel-track">
+                                <div class="carousel-slide active">
+                                    <img src="project-1.png" alt="Spartan Gym - Dashboard">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="project-2.png" alt="Spartan Gym - Member View">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="project-3.png" alt="Spartan Gym - Analytics">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <!-- Dots omitted for cleaner look on small carousel, or can be added -->
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">E-Commerce Website</h3>
-                        <p class="project-role"><i class="fas fa-user"></i> Role: Full-Stack Developer</p>
+                        <h3 class="project-title">Spartan Gym Management System</h3>
+                        <p class="project-role"><i class="fas fa-user-circle"></i> Role: Lead Developer & UI/UX Designer
+                        </p>
                         <p class="project-description">
-                            A fully responsive e-commerce platform featuring a modern shopping cart system,
-                            secure user authentication, and seamless payment integration. Built with a focus
-                            on user experience and performance, this project demonstrates proficiency in
-                            full-stack development and modern web technologies.
+                            A comprehensive desktop application designed to streamline gym operations and enhance member
+                            experience.
+                            It features a dual-interface system: a secure Admin Dashboard for managing member records
+                            and a touch-friendly Member Kiosk for self-service check-ins.
+                            The system utilizes a persistent local database to track membership validity automatically.
+                            <br><br>
+                            <strong>Contributions:</strong><br>
+                            • Conceptualized and implemented the "Spartan" visual identity.<br>
+                            • Developed complete backend logic for member CRUD and data persistence.<br>
+                            • Built the interactive GUI using CustomTkinter.
                         </p>
                         <div class="project-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">CustomTkinter</span>
+                            <span class="tag">JSON</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">VS Code</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-btn project-btn-primary" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
                             <a href="#" class="project-btn project-btn-secondary" target="_blank">
                                 <i class="fab fa-github"></i> View Code
                             </a>
@@ -209,14 +261,14 @@
                         <i class="fas fa-envelope"></i>
                         <div class="contact-item-text">
                             <h4>Email</h4>
-                            <p>@evsu.edu.ph</p>
+                            <p>rhonamae.bulawan@evsu.edu.ph</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div class="contact-item-text">
                             <h4>Phone</h4>
-                            <p>secret</p>
+                            <p>09938564430</p>
                         </div>
                     </div>
                     <div class="contact-item">
